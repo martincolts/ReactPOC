@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { host } from '../hosts';
 
-
 export default class ListPersons extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +9,7 @@ export default class ListPersons extends Component {
         this.state = {
             persons: []
         }
-        this.getAllPersonsList();
+        
     }
 
     getAllPersonsList () {
@@ -22,13 +21,13 @@ export default class ListPersons extends Component {
     };
 
     render() {
+        this.getAllPersonsList();
         return (
             <ListPersonsDom person={this.state.persons}/>
         )
     }
 
 };
-
 
 export class ListPersonsDom extends Component{
     constructor (props){
@@ -40,7 +39,7 @@ export class ListPersonsDom extends Component{
         return (
             <div>
                 {this.props.person.map(person => 
-                    <lu> <PersonRow person={person} /></lu>
+                    <ul> <PersonRow person={person} /></ul>
                 )}
             </div>
         );

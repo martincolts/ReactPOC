@@ -32,6 +32,12 @@ export default class CreatePerson extends Component {
         axios.post(host.ip+host.port+"/demo/postPerson",person)
         .then((response)=>{
             (console.log(response));
+            this.setState = (
+                {
+                    nombre: "",
+                    apellido: ""
+                    }
+            )
         })
         .catch((response)=>(console.log(response)));
     }
